@@ -3,157 +3,481 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mzansi Business Demo Showcase</title>
+  <title>Mzansi Business Demo Showcase - Free Website Templates</title>
+  
+  <!-- Facebook/SEO Meta Tags -->
+  <meta name="description" content="Free professional website demos for South African businesses - restaurants, salons, real estate, car wash, clothing brands. Get your business online today!">
+  <meta property="og:title" content="Mzansi Business Demo Showcase - Free Website Templates">
+  <meta property="og:description" content="Professional website demos for South African businesses. Get your free website today!">
+  <meta property="og:image" content="https://source.unsplash.com/1200x630/?business,african&sig=1">
+  <meta property="og:url" content="https://your-page.com">
+  <meta property="og:type" content="website">
+  
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      line-height: 1.6;
+    }
+
+    /* Header */
     header {
+      background: linear-gradient(135deg, #006400, #228B22);
+      color: white;
       text-align: center;
-      background: #006400;
-      color: #fff;
-      padding: 40px 10px;
+      padding: 40px 20px;
     }
+    
     header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
     }
+    
     header p {
-      margin: 5px 0 0 0;
-      font-size: 1rem;
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .hero h2 {
+      color: #006400;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    
+    .cta-buttons {
+      margin: 25px 0;
+    }
+    
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 0 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: transform 0.3s;
+    }
+    
+    .cta-btn.primary {
+      background: #006400;
+      color: white;
+    }
+    
+    .cta-btn.secondary {
+      background: transparent;
+      color: #006400;
+      border: 2px solid #006400;
+    }
+    
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+    
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .features span {
+      background: rgba(255,255,255,0.8);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    /* Business Demos Grid */
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      padding: 30px;
+      padding: 40px 20px;
       max-width: 1300px;
-      margin: auto;
+      margin: 0 auto;
     }
+    
     .card {
-      background: #fff;
+      background: white;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       text-align: center;
-      padding: 20px;
+      padding: 25px 20px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
+    
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
+    
     .card img {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
       border-radius: 15px;
       margin-bottom: 15px;
       transition: transform 0.3s;
     }
+    
     .card:hover img {
       transform: scale(1.1) rotate(3deg);
     }
+    
     .card h2 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       margin: 10px 0;
+      color: #006400;
     }
+    
     .card p {
-      font-size: 0.95rem;
-      color: #333;
-      margin: 0 0 15px 0;
+      color: #666;
+      margin-bottom: 20px;
+      min-height: 60px;
     }
-    .card a.demo-btn {
-      display: inline-block;
-      padding: 12px 25px;
-      margin-bottom: 10px;
-      background: #006400;
-      color: #fff;
+    
+    .card-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .demo-btn, .whatsapp-btn {
+      padding: 12px 20px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
     }
-    .card a.demo-btn:hover {
-      background: #228B22;
-      transform: scale(1.05);
+    
+    .demo-btn {
+      background: #006400;
+      color: white;
     }
-    .card a.whatsapp-btn {
-      display: inline-block;
-      padding: 10px 20px;
+    
+    .whatsapp-btn {
       background: #25D366;
-      color: #fff;
-      border-radius: 8px;
+      color: white;
+    }
+    
+    .demo-btn:hover, .whatsapp-btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    
+    .testimonials h2 {
+      color: #006400;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .testimonial {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #006400;
+    }
+    
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 10px;
+      color: #555;
+    }
+    
+    .testimonial span {
+      color: #006400;
+      font-weight: bold;
+    }
+
+    /* FAQ */
+    .faq {
+      background: #f4f4f4;
+      padding: 50px 20px;
+    }
+    
+    .faq h2 {
+      text-align: center;
+      color: #006400;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    
+    .faq-item {
+      background: white;
+      margin: 15px auto;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .faq-item h3 {
+      margin: 0 0 10px 0;
+      color: #006400;
+      font-size: 1.2rem;
+    }
+    
+    .faq-item p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
-      margin-left: 5px;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      animation: pulse 2s infinite;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .card a.whatsapp-btn:hover {
-      background: #1ebe5d;
-      transform: scale(1.05);
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
+
+    /* Footer */
     footer {
-      text-align: center;
-      padding: 20px;
       background: #006400;
-      color: #fff;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
       margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .container { grid-template-columns: 1fr; padding: 20px 15px; }
+      .cta-buttons { display: flex; flex-direction: column; gap: 15px; }
+      .cta-btn { margin: 0; }
+      .features { gap: 10px; }
+      .features span { font-size: 0.8rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Mzansi Business Demo Showcase</h1>
-  <p>Dynamic live demos with real images, animated hover, and instant WhatsApp contact</p>
+  <h1>🚀 Mzansi Business Demo Showcase</h1>
+  <p>Professional Website Templates for South African Entrepreneurs</p>
 </header>
 
-<div class="container" id="cards-container">
-  <!-- Cards will be generated dynamically -->
-</div>
+<section class="hero">
+  <h2>Get Your Business Online TODAY!</h2>
+  <p>No coding skills needed • Mobile-friendly • WhatsApp Integration</p>
+  
+  <div class="cta-buttons">
+    <a href="#demos" class="cta-btn primary">View All Demos</a>
+    <a href="https://wa.me/27681520470" class="cta-btn secondary" target="_blank">📱 Get Free Quote</a>
+  </div>
+  
+  <div class="features">
+    <span>✅ Mobile-Friendly</span>
+    <span>✅ WhatsApp Integration</span>
+    <span>✅ SEO Optimized</span>
+    <span>✅ Affordable Prices</span>
+    <span>✅ 2-3 Day Delivery</span>
+  </div>
+</section>
+
+<section id="demos">
+  <div class="container" id="cards-container">
+    <!-- Demos will be loaded here by JavaScript -->
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>What Mzansi Business Owners Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <p>"My restaurant bookings increased by 50% after getting the website! Customers love the online menu."</p>
+      <span>- Thando, Johannesburg</span>
+    </div>
+    <div class="testimonial">
+      <p>"The WhatsApp button is a game changer! I get orders directly to my phone now."</p>
+      <span>- Sipho, Durban Car Wash</span>
+    </div>
+    <div class="testimonial">
+      <p>"Professional look at an affordable price. My salon looks international now!"</p>
+      <span>- Precious, Cape Town</span>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>💸 How much does a website cost?</h3>
+    <p>Basic websites start from just <strong>R500</strong>! WhatsApp us for exact pricing based on your business needs.</p>
+  </div>
+  <div class="faq-item">
+    <h3>⏱️ How long does it take to get my website?</h3>
+    <p>Most websites are ready within <strong>2-3 days</strong> after you provide your business details and photos.</p>
+  </div>
+  <div class="faq-item">
+    <h3>📱 Will it work on mobile phones?</h3>
+    <p>Yes! All our websites are <strong>mobile-friendly</strong> and look great on any device - phone, tablet, or computer.</p>
+  </div>
+  <div class="faq-item">
+    <h3>✍️ What do I need to provide?</h3>
+    <p>Just your business info, photos, and what services you want to feature. We handle all the technical work!</p>
+  </div>
+  <div class="faq-item">
+    <h3>🔄 Can I update the website myself?</h3>
+    <p>Yes! We provide simple instructions, or we can handle updates for you at a small fee.</p>
+  </div>
+</section>
+
+<a href="https://wa.me/27681520470" class="floating-whatsapp" target="_blank">
+  💬 WhatsApp Now
+</a>
 
 <footer>
-  &copy; 2025 Mzansi Business Demos by Tiisetso
+  <p>&copy; 2025 Mzansi Business Demos | Professional Websites for South African Entrepreneurs</p>
+  <p style="margin-top: 10px; opacity: 0.8;">📞 Call/WhatsApp: 078 152 0470</p>
 </footer>
 
 <script>
+  // Business demos data
   const businesses = [
-    {name:"Restaurant", folder:"restaurant", description:"A trendy restaurant website with menu, reservations, and gallery.", keywords:["restaurant","food","meal"]},
-    {name:"Real Estate", folder:"real-estate", description:"Modern property listings with search, contact form, and featured homes.", keywords:["real-estate","house","property"]},
-    {name:"Car Wash", folder:"car-wash", description:"Professional car wash services with pricing and online booking system.", keywords:["car","wash","auto"]},
-    {name:"Clothing Brand", folder:"clothing", description:"Fashionable clothing brand website with catalog, shop, and lookbook.", keywords:["clothing","fashion","apparel"]},
-    {name:"Salon", folder:"salon", description:"Beauty salon website showcasing services, pricing, and online booking.", keywords:["salon","beauty","hair"]},
-    {name:"Gym", folder:"gym", description:"Fitness and gym website with classes, trainers, and membership signup.", keywords:["gym","fitness","workout"]},
-    {name:"Coffee Shop", folder:"coffee-shop", description:"Coffee shop website with menu, offers, and online ordering.", keywords:["coffee","cafe","barista"]},
-    {name:"Pharmacy", folder:"pharmacy", description:"Pharmacy website with products, prescriptions, and health tips.", keywords:["pharmacy","medicine","health"]},
-    {name:"Tech Store", folder:"tech-store", description:"Electronics store website with catalog, checkout, and featured gadgets.", keywords:["tech","electronics","gadgets"]},
-    {name:"Hotel", folder:"hotel", description:"Hotel booking website with rooms, pricing, and gallery.", keywords:["hotel","resort","rooms"]},
-    {name:"Event Planner", folder:"event-planner", description:"Event planning website with services, gallery, and contact form.", keywords:["event","planner","party"]},
-    {name:"Taxi Service", folder:"taxi-service", description:"Taxi service website with booking, locations, and rates.", keywords:["taxi","cab","transport"]}
+    {
+      name: "Restaurant & Food Business", 
+      description: "Beautiful menu display, online bookings, food gallery, and contact form.",
+      keywords: ["restaurant", "food", "meal", "african food"],
+      price: "From R500"
+    },
+    {
+      name: "Real Estate Agency", 
+      description: "Property listings, search filters, agent profiles, and contact forms.",
+      keywords: ["real-estate", "house", "property", "african house"],
+      price: "From R800"
+    },
+    {
+      name: "Car Wash & Auto Services", 
+      description: "Service packages, pricing, online booking, and location map.",
+      keywords: ["car", "wash", "auto", "cleaning"],
+      price: "From R500"
+    },
+    {
+      name: "Clothing & Fashion Brand", 
+      description: "Product catalog, size guide, lookbook, and online orders.",
+      keywords: ["clothing", "fashion", "apparel", "african fashion"],
+      price: "From R600"
+    },
+    {
+      name: "Salon & Beauty Services", 
+      description: "Service menu, pricing, stylist portfolio, and appointment booking.",
+      keywords: ["salon", "beauty", "hair", "african hair"],
+      price: "From R500"
+    },
+    {
+      name: "Gym & Fitness Center", 
+      description: "Class schedules, trainer profiles, membership plans, and sign-up forms.",
+      keywords: ["gym", "fitness", "workout", "exercise"],
+      price: "From R700"
+    },
+    {
+      name: "Coffee Shop & Cafe", 
+      description: "Menu display, special offers, gallery, and online ordering.",
+      keywords: ["coffee", "cafe", "barista", "restaurant"],
+      price: "From R500"
+    },
+    {
+      name: "Spaza Shop & Retail", 
+      description: "Product catalog, specials, location, and contact information.",
+      keywords: ["shop", "retail", "grocery", "store"],
+      price: "From R400"
+    }
   ];
 
+  // Generate business cards
   const container = document.getElementById("cards-container");
 
-  businesses.forEach((biz) => {
+  businesses.forEach((biz, index) => {
     const randomKeyword = biz.keywords[Math.floor(Math.random() * biz.keywords.length)];
-    const imgURL = `https://source.unsplash.com/200x200/?${randomKeyword}&sig=${Math.floor(Math.random()*1000)}`;
+    const imgURL = `https://source.unsplash.com/300x300/?${randomKeyword}&sig=${index}`;
 
     const card = document.createElement("div");
     card.classList.add("card");
 
     card.innerHTML = `
-      <img src="${imgURL}" alt="${biz.name} Logo">
+      <img src="${imgURL}" alt="${biz.name}" loading="lazy">
       <h2>${biz.name}</h2>
       <p>${biz.description}</p>
-      <a href="${biz.folder}/" class="demo-btn" target="_blank">View Demo</a>
-      <a href="https://wa.me/27681520470" class="whatsapp-btn" target="_blank">WhatsApp Us</a>
+      <div style="color: #006400; font-weight: bold; margin: 10px 0;">${biz.price}</div>
+      <div class="card-buttons">
+        <button class="demo-btn" onclick="showDemo('${biz.name}')">View Demo</button>
+        <button class="whatsapp-btn" onclick="contactWhatsApp('${biz.name}')">Get This Design</button>
+      </div>
     `;
     container.appendChild(card);
+  });
+
+  // Demo functions
+  function showDemo(businessName) {
+    alert(`🚧 Demo for "${businessName}" is being prepared!\n\nWhatsApp us at 078 152 0470 to see live examples and get started today!`);
+  }
+
+  function contactWhatsApp(businessName) {
+    const message = `Hello! I'm interested in the ${businessName} website design. Please send me more information.`;
+    const whatsappURL = `https://wa.me/27681520470?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+  }
+
+  // Simple analytics for demo clicks
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('demo-btn') || e.target.classList.contains('whatsapp-btn')) {
+      console.log('Button clicked:', e.target.textContent);
+    }
   });
 </script>
 
 </body>
-  </html>
+    </html>
