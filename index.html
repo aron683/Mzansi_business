@@ -1,945 +1,777 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ditaloso Jumpsuit | Premium Traditional Wear</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Base Styles */
-        :root {
-            --primary: #8B4513;
-            --secondary: #D2691E;
-            --accent: #CD853F;
-            --light: #FAEBD7;
-            --dark: #5D4037;
-            --text: #3E2723;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: var(--text);
-            background-color: #fff;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        h1, h2, h3, h4 {
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-        }
-        
-        h3 {
-            font-size: 1.8rem;
-            font-weight: 500;
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-light {
-            background-color: var(--light);
-            color: var(--text);
-        }
-        
-        .btn-light:hover {
-            background-color: var(--accent);
-            color: white;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 50px;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary);
-        }
-        
-        .text-center .section-title:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(139, 69, 19, 0.8), rgba(139, 69, 19, 0.9));
-            color: white;
-            padding: 180px 0 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('image1.jpg'); /* Replace with your image1 */
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-        }
-        
-        .hero h1 {
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        /* Collections Section */
-        .collections {
-            background-color: #f9f9f9;
-        }
-        
-        .collections-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .collection-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .collection-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .collection-img {
-            height: 300px;
-            overflow: hidden;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .collection-img::before {
-            content: "Upload Your Image";
-            position: absolute;
-            color: #999;
-            font-size: 1rem;
-        }
-        
-        .collection-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .collection-card:hover .collection-img img {
-            transform: scale(1.05);
-        }
-        
-        .collection-content {
-            padding: 25px;
-            text-align: center;
-        }
-        
-        .collection-content h3 {
-            margin-bottom: 15px;
-        }
-        
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .about-img {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            height: 500px;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .about-img::before {
-            content: "Upload Your Image";
-            position: absolute;
-            color: #999;
-            font-size: 1.2rem;
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .about-text h2 {
-            margin-bottom: 20px;
-        }
-        
-        .about-features {
-            margin-top: 20px;
-        }
-        
-        .feature {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .feature i {
-            color: var(--primary);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .testimonials .section-title:after {
-            background-color: white;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-            background-color: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-        }
-        
-        .author-info h4 {
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            margin: 0;
-            color: var(--light);
-        }
-        
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .contact-item i {
-            color: var(--primary);
-            margin-right: 15px;
-            margin-top: 5px;
-            font-size: 1.2rem;
-        }
-        
-        .contact-form {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .footer-column h3:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background-color: var(--secondary);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: var(--light);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--light);
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-img {
-                order: -1;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            nav ul.show {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 250px;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mzansi Business Websites - 15 Professional Templates</title>
+  
+  <!-- Facebook/SEO Meta Tags -->
+  <meta name="description" content="15 Professional website templates for South African businesses. From R500! WhatsApp: 068 152 0470">
+  <meta property="og:title" content="15 Mzansi Business Website Templates - Get Online Today">
+  <meta property="og:description" content="Professional websites for SA businesses. Restaurants, Spaza Shops, Salons, Taxis & more. WhatsApp: 068 152 0470">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop">
+  <meta property="og:url" content="https://aron683.github.io">
+  <meta property="og:type" content="website">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #006400, #228B22);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .header-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    
+    .hero h2 {
+      color: #006400;
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    
+    .cta-buttons {
+      margin: 40px 0;
+    }
+    
+    .cta-btn {
+      display: inline-block;
+      padding: 18px 40px;
+      margin: 0 15px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    
+    .cta-btn.primary {
+      background: #006400;
+      color: white;
+    }
+    
+    .cta-btn.secondary {
+      background: transparent;
+      color: #006400;
+      border: 3px solid #006400;
+    }
+    
+    .cta-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .features span {
+      background: rgba(255,255,255,0.95);
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #006400;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    
+    .features span:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Business Templates Grid */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+      padding: 60px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #006400;
+      margin-bottom: 50px;
+      grid-column: 1 / -1;
+      font-weight: 700;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+      text-align: center;
+      padding: 35px 30px;
+      transition: all 0.4s ease;
+      border: 1px solid #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(135deg, #006400, #228B22);
+    }
+    
+    .card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+    }
+    
+    .card-image {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      border: 5px solid #f8f9fa;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    
+    .card:hover .card-image {
+      transform: scale(1.08);
+    }
+    
+    .business-logo {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      display: block;
+    }
+    
+    .card h2 {
+      font-size: 1.6rem;
+      margin: 10px 0;
+      color: #006400;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    
+    .card p {
+      color: #666;
+      margin-bottom: 25px;
+      line-height: 1.7;
+      min-height: 80px;
+      font-size: 1.05rem;
+    }
+    
+    .price {
+      color: #006400;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin: 20px 0;
+      background: linear-gradient(135deg, #f0fff0, #e6ffe6);
+      padding: 12px 20px;
+      border-radius: 50px;
+      display: inline-block;
+    }
+    
+    .whatsapp-btn {
+      padding: 16px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      width: 100%;
+      max-width: 250px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      display: block;
+      margin: 20px auto 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .whatsapp-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .whatsapp-btn:hover::before {
+      left: 100%;
+    }
+    
+    .whatsapp-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    
+    .testimonials h2 {
+      color: #006400;
+      margin-bottom: 60px;
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonial {
+      background: #f8f9fa;
+      padding: 40px 35px;
+      border-radius: 20px;
+      border-left: 6px solid #006400;
+      text-align: left;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+      position: relative;
+    }
+    
+    .testimonial:hover {
+      transform: translateY(-10px);
+    }
+    
+    .testimonial::before {
+      content: '"';
+      font-size: 4rem;
+      color: #006400;
+      opacity: 0.2;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+    
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 25px;
+      color: #555;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .testimonial span {
+      color: #006400;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* FAQ */
+    .faq {
+      background: #f4f4f4;
+      padding: 80px 20px;
+    }
+    
+    .faq h2 {
+      text-align: center;
+      color: #006400;
+      margin-bottom: 60px;
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      background: white;
+      margin: 25px 0;
+      padding: 35px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border-left: 5px solid #006400;
+    }
+    
+    .faq-item:hover {
+      transform: translateX(15px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+    
+    .faq-item h3 {
+      margin: 0 0 20px 0;
+      color: #006400;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    
+    .faq-item p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(135deg, #006400, #228B22);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    
+    .contact h2 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+    
+    .contact-info {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+    }
+    
+    .contact-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 30px 0;
+      background: rgba(255,255,255,0.15);
+      padding: 20px 40px;
+      border-radius: 60px;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      padding: 20px 30px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 8px 35px rgba(37, 211, 102, 0.6);
+      z-index: 1000;
+      animation: pulse 2s infinite;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.8);
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    /* Footer */
+    footer {
+      background: #004d00;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .footer-content p {
+      margin: 15px 0;
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      .header-image { width: 100px; height: 100px; }
+      .container { grid-template-columns: 1fr; padding: 40px 15px; gap: 25px; }
+      .cta-buttons { display: flex; flex-direction: column; gap: 25px; }
+      .cta-btn { margin: 0; width: 100%; max-width: 320px; padding: 16px 30px; }
+      .features { gap: 15px; }
+      .features span { font-size: 1rem; padding: 10px 20px; }
+      .contact-number { font-size: 1.8rem; padding: 15px 30px; }
+      .floating-whatsapp { padding: 16px 25px; font-size: 1.1rem; }
+      .business-logo { font-size: 3rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">Ditaloso<span>Jumpsuit</span></a>
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#collections">Collections</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Elegant Traditional Jumpsuits</h1>
-            <p>Discover our exclusive collection of beautifully crafted traditional wear jumpsuits that blend cultural heritage with contemporary style.</p>
-            <div class="hero-btns">
-                <a href="#collections" class="btn">View Collection</a>
-                <a href="#contact" class="btn btn-light">Custom Order</a>
-            </div>
-        </div>
-    </section>
+<header>
+  <!-- UPLOAD YOUR PHOTO OF TWO PEOPLE AS image1.jpg -->
+  <img src="image1.jpg" alt="Mzansi Business Team" class="header-image">
+  
+  <h1>15 Mzansi Business Website Templates</h1>
+  <p>Professional Websites for South African Entrepreneurs & Small Businesses</p>
+</header>
 
-    <!-- Collections Section -->
-    <section class="collections" id="collections">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Our Collections</h2>
-                <p>Explore our range of traditional jumpsuits crafted with premium fabrics and intricate details</p>
-            </div>
-            <div class="collections-grid">
-                <div class="collection-card">
-                    <div class="collection-img">
-                        <!-- Replace with your image2 -->
-                        <img src="image2.jpg" alt="Ankara Jumpsuit">
-                    </div>
-                    <div class="collection-content">
-                        <h3>Ankara Print Jumpsuit</h3>
-                        <p>Vibrant African print jumpsuit with elegant silhouette and comfortable fit. Perfect for special occasions and cultural events.</p>
-                        <a href="#" class="btn">View Details</a>
-                    </div>
-                </div>
-                <div class="collection-card">
-                    <div class="collection-img">
-                        <!-- Replace with your image3 -->
-                        <img src="image3.jpg" alt="Kente Jumpsuit">
-                    </div>
-                    <div class="collection-content">
-                        <h3>Kente Design Jumpsuit</h3>
-                        <p>Luxurious jumpsuit featuring traditional Kente patterns with modern tailoring. A statement piece for any wardrobe.</p>
-                        <a href="#" class="btn">View Details</a>
-                    </div>
-                </div>
-                <div class="collection-card">
-                    <div class="collection-img">
-                        <!-- Replace with your image4 -->
-                        <img src="image4.jpg" alt="Adire Jumpsuit">
-                    </div>
-                    <div class="collection-content">
-                        <h3>Adire Tie-Dye Jumpsuit</h3>
-                        <p>Beautifully crafted indigo-dyed jumpsuit with traditional Nigerian patterns. Comfortable, stylish, and culturally rich.</p>
-                        <a href="#" class="btn">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <h2>Get Your Business Online TODAY!</h2>
+  <p>Professional Websites Starting From Just <strong>R500</strong></p>
+  
+  <div class="cta-buttons">
+    <a href="#templates" class="cta-btn primary">View All 15 Templates</a>
+    <a href="https://wa.me/27681520470" class="cta-btn secondary" target="_blank">📱 WhatsApp for Instant Quote</a>
+  </div>
+  
+  <div class="features">
+    <span>✅ Mobile-Friendly Design</span>
+    <span>✅ WhatsApp Integration</span>
+    <span>✅ SEO Optimized</span>
+    <span>✅ Same Day Setup</span>
+    <span>✅ Affordable Pricing</span>
+  </div>
+</section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">Our Story</h2>
-                    <p>Ditaloso Jumpsuit was founded with a passion for preserving traditional textile arts while creating contemporary fashion that celebrates cultural heritage.</p>
-                    <p>Each piece in our collection is carefully designed and crafted by skilled artisans using time-honored techniques combined with modern tailoring.</p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Authentic Craftsmanship</h4>
-                                <p>Every jumpsuit is made with traditional techniques passed down through generations.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Premium Materials</h4>
-                                <p>We source only the highest quality fabrics and materials for our collections.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Custom Fitting</h4>
-                                <p>Available in standard sizes with custom tailoring options for perfect fit.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-img">
-                    <!-- Replace with your image5 -->
-                    <img src="image5.jpg" alt="Our Craftsmanship">
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="templates">
+  <div class="container">
+    <h2 class="section-title">15 Professional Business Templates</h2>
+    
+    <!-- 1. Restaurant -->
+    <div class="card">
+      <div class="business-logo">🍽️</div>
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=400&fit=crop" alt="Restaurant" class="card-image">
+      <h2>Restaurant & Food Business</h2>
+      <p>Beautiful menu display, online table bookings, food gallery, and contact form. Perfect for restaurants, shisanyamas, and food trucks.</p>
+      <div class="price">From R500</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Restaurant & Food Business Website')">Get This Website</button>
+    </div>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Customer Love</h2>
-                <p>See what our customers have to say about our traditional jumpsuits</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "The Ankara jumpsuit I purchased for my sister's wedding was absolutely stunning! The fit was perfect and I received so many compliments."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Amina Johnson</h4>
-                            <p>Lagos, Nigeria</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "I ordered a custom Kente jumpsuit for a cultural event and it exceeded my expectations. The craftsmanship and attention to detail were remarkable."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Chloe Williams</h4>
-                            <p>Accra, Ghana</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "As someone who values both tradition and modern fashion, Ditaloso hits the perfect balance. My Adire jumpsuit is my favorite piece in my wardrobe."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Zara Mohammed</h4>
-                            <p>Abuja, Nigeria</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 2. Spaza Shop -->
+    <div class="card">
+      <div class="business-logo">🏪</div>
+      <img src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?w=400&h=400&fit=crop" alt="Spaza Shop" class="card-image">
+      <h2>Spaza Shop & Retail Store</h2>
+      <p>Product catalog, special offers, location map, and WhatsApp ordering. Ideal for spaza shops, general dealers, and retail stores.</p>
+      <div class="price">From R400</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Spaza Shop Website')">Get This Website</button>
+    </div>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Get In Touch</h2>
-                <p>Have questions about our traditional jumpsuits or need a custom order? Contact us today.</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Our Boutique</h4>
-                            <p>123 Fashion District, Victoria Island<br>Lagos, Nigeria</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+234 (0) 812 345 6789</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@ditalosojumpsuit.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Boutique Hours</h4>
-                            <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 3. Car Wash -->
+    <div class="card">
+      <div class="business-logo">🚗</div>
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop" alt="Car Wash" class="card-image">
+      <h2>Car Wash & Auto Services</h2>
+      <p>Service packages, online booking system, pricing tables, and customer testimonials. Great for car washes and mechanics.</p>
+      <div class="price">From R500</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Car Wash Website')">Get This Website</button>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Ditaloso Jumpsuit</h3>
-                    <p>Celebrating cultural heritage through beautifully crafted traditional jumpsuits that blend timeless elegance with contemporary style.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#collections">Collections</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Collections</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Ankara Print</a></li>
-                        <li><a href="#">Kente Design</a></li>
-                        <li><a href="#">Adire Tie-Dye</a></li>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Custom Orders</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to receive updates on new collections and exclusive offers.</p>
-                    <form id="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <button type="submit" class="btn">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Ditaloso Jumpsuit. All Rights Reserved. | Crafted with <i class="fas fa-heart" style="color: #e74c3c;"></i></p>
-            </div>
-        </div>
-    </footer>
+    <!-- 4. Salon -->
+    <div class="card">
+      <div class="business-logo">💇‍♀️</div>
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=400&fit=crop" alt="Salon" class="card-image">
+      <h2>Salon & Beauty Services</h2>
+      <p>Service menu with prices, online appointments, stylist portfolios, and promotional offers. Perfect for salons and beauty therapists.</p>
+      <div class="price">From R500</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Salon Website')">Get This Website</button>
+    </div>
 
-    <script>
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.getElementById('nav-menu').classList.toggle('show');
+    <!-- 5. Taxi Service -->
+    <div class="card">
+      <div class="business-logo">🚕</div>
+      <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=400&fit=crop" alt="Taxi" class="card-image">
+      <h2>Taxi & Transport Service</h2>
+      <p>Booking system, service areas, pricing, and driver profiles. Ideal for taxi owners, Uber services, and transport companies.</p>
+      <div class="price">From R600</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Taxi Service Website')">Get This Website</button>
+    </div>
+
+    <!-- 6. Real Estate -->
+    <div class="card">
+      <div class="business-logo">🏠</div>
+      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=400&fit=crop" alt="Real Estate" class="card-image">
+      <h2>Real Estate Agency</h2>
+      <p>Property listings with search filters, agent profiles, mortgage calculator, and lead capture forms. Perfect for estate agents.</p>
+      <div class="price">From R800</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Real Estate Website')">Get This Website</button>
+    </div>
+
+    <!-- 7. Clothing Store -->
+    <div class="card">
+      <div class="business-logo">👗</div>
+      <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=400&fit=crop" alt="Clothing" class="card-image">
+      <h2>Clothing & Fashion Store</h2>
+      <p>Product catalog, size guides, lookbook gallery, and online ordering. Great for clothing stores and fashion designers.</p>
+      <div class="price">From R600</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Clothing Store Website')">Get This Website</button>
+    </div>
+
+    <!-- 8. Gym & Fitness -->
+    <div class="card">
+      <div class="business-logo">💪</div>
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop" alt="Gym" class="card-image">
+      <h2>Gym & Fitness Center</h2>
+      <p>Class schedules, trainer profiles, membership plans, and sign-up forms. Perfect for gyms and personal trainers.</p>
+      <div class="price">From R700</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Gym Website')">Get This Website</button>
+    </div>
+
+    <!-- 9. Construction -->
+    <div class="card">
+      <div class="business-logo">🏗️</div>
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=400&fit=crop" alt="Construction" class="card-image">
+      <h2>Construction Company</h2>
+      <p>Project portfolio, services offered, team profiles, and quote requests. Ideal for builders and construction businesses.</p>
+      <div class="price">From R700</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Construction Company Website')">Get This Website</button>
+    </div>
+
+    <!-- 10. Cleaning Services -->
+    <div class="card">
+      <div class="business-logo">✨</div>
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=400&fit=crop" alt="Cleaning" class="card-image">
+      <h2>Cleaning Services</h2>
+      <p>Service packages, pricing, booking system, and customer reviews. Perfect for home and office cleaning services.</p>
+      <div class="price">From R500</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Cleaning Services Website')">Get This Website</button>
+    </div>
+
+    <!-- 11. Event Planning -->
+    <div class="card">
+      <div class="business-logo">🎉</div>
+      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=400&h=400&fit=crop" alt="Events" class="card-image">
+      <h2>Event Planning Services</h2>
+      <p>Portfolio gallery, service packages, client testimonials, and booking forms. Great for event planners and coordinators.</p>
+      <div class="price">From R600</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Event Planning Website')">Get This Website</button>
+    </div>
+
+    <!-- 12. Plumbing Services -->
+    <div class="card">
+      <div class="business-logo">🔧</div>
+      <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop" alt="Plumbing" class="card-image">
+      <h2>Plumbing & Electrical</h2>
+      <p>Emergency services, pricing, service areas, and 24/7 contact. Ideal for plumbers, electricians, and handymen.</p>
+      <div class="price">From R500</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Plumbing Services Website')">Get This Website</button>
+    </div>
+
+    <!-- 13. Catering Services -->
+    <div class="card">
+      <div class="business-logo">🍴</div>
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=400&fit=crop" alt="Catering" class="card-image">
+      <h2>Catering Services</h2>
+      <p>Menu packages, event gallery, testimonials, and quote requests. Perfect for catering companies and food services.</p>
+      <div class="price">From R550</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Catering Services Website')">Get This Website</button>
+    </div>
+
+    <!-- 14. Tutoring Services -->
+    <div class="card">
+      <div class="business-logo">📚</div>
+      <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=400&h=400&fit=crop" alt="Tutoring" class="card-image">
+      <h2>Tutoring & Lessons</h2>
+      <p>Subject offerings, tutor profiles, scheduling system, and contact forms. Great for tutors and educational services.</p>
+      <div class="price">From R450</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Tutoring Services Website')">Get This Website</button>
+    </div>
+
+    <!-- 15. Photography -->
+    <div class="card">
+      <div class="business-logo">📸</div>
+      <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=400&h=400&fit=crop" alt="Photography" class="card-image">
+      <h2>Photography Services</h2>
+      <p>Portfolio gallery, package pricing, booking system, and client reviews. Perfect for photographers and creatives.</p>
+      <div class="price">From R650</div>
+      <button class="whatsapp-btn" onclick="contactWhatsApp('Photography Services Website')">Get This Website</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <h2>What South African Business Owners Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <p>"My spaza shop in Soweto now gets orders via WhatsApp from the website! Customers love browsing products online before coming to buy."</p>
+      <span>- Bongani M., Soweto Spaza Owner</span>
+    </div>
+    <div class="testimonial">
+      <p>"The taxi booking website helped my business grow 40% in 2 months. Now people book rides in advance instead of calling randomly."</p>
+      <span>- Sipho D., Durban Taxi Owner</span>
+    </div>
+    <div class="testimonial">
+      <p>"My salon looks professional with the new website. Clients book appointments online and I spend less time on the phone. Worth every rand!"</p>
+      <span>- Precious K., Cape Town Salon Owner</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <h3>💸 How much does a professional website cost?</h3>
+      <p>Basic business websites start from <strong>R500</strong>! This includes mobile-friendly design, contact forms, and basic setup. E-commerce sites start from R800. WhatsApp us for exact pricing based on your specific needs.</p>
+    </div>
+    <div class="faq-item">
+      <h3>⏱️ How long does it take to get my website live?</h3>
+      <p>Most basic websites are ready within <strong>24-48 hours</strong> after you provide your business information and photos. More complex sites with e-commerce may take 3-5 days.</p>
+    </div>
+    <div class="faq-item">
+      <h3>📱 Will my website work on mobile phones?</h3>
+      <p>Absolutely! All our websites are <strong>100% mobile-responsive</strong> and look perfect on smartphones, tablets, and desktop computers. Over 60% of your customers will visit from mobile devices.</p>
+    </div>
+    <div class="faq-item">
+      <h3>✍️ What information do I need to provide?</h3>
+      <p>Just your business name, contact details, services/products, photos of your work, and any special offers. We handle all the technical work - no computer skills needed!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact">
+  <h2>Ready to Get Your Business Online?</h2>
+  <div class="contact-info">
+    <p>WhatsApp us now for a free consultation and instant quote</p>
+    <div class="contact-number">068 152 0470</div>
+    <p>We're available 7 days a week from 8AM to 8PM</p>
+  </div>
+  <a href="https://wa.me/27681520470" class="cta-btn primary" target="_blank">📱 Click to WhatsApp Now</a>
+</section>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/27681520470" class="floating-whatsapp" target="_blank">
+  💬 WhatsApp Now
+</a>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2024 Mzansi Business Websites | Professional Websites for South African Entrepreneurs</p>
+    <p>📞 Call/WhatsApp: 068 152 0470</p>
+  </div>
+</footer>
+
+<script>
+  function contactWhatsApp(businessType) {
+    const message = `Hello! I'm interested in the ${businessType}. Please send me:\n\n1. More information\n2. Pricing details\n3. How to get started\n\nMy business name: ________`;
+    const whatsappURL = `https://wa.me/27681520470?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+  }
+
+  // Add smooth scrolling for better user experience
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
+      }
+    });
+  });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if(window.innerWidth <= 768) {
-                        document.getElementById('nav-menu').classList.remove('show');
-                    }
-                }
-            });
-        });
+  // Simple animation for cards when they come into view
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-        // Form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
 
-        // Newsletter form submission
-        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for subscribing to our newsletter!');
-            this.reset();
-        });
+  // Observe all cards
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+  });
+</script>
 
-        // Sticky header on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if(window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-    </script>
 </body>
-  </html>
+    </html>
